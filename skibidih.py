@@ -13,10 +13,10 @@ class MyCilent(discord.Client):
     
     async def on_message(self, message):
         # Check if the bot is sending a message, if it is sending a message return null
-        if message.on_author == self.user:
+        if message.author == self.user:
             return 
         if message.content.startswith("$haii"):
-            await message.channel.senf("Hello :3")
+            await message.channel.send("Hello :3")
 
 intents = discord.Intents.default()
 intents.message_content = True
